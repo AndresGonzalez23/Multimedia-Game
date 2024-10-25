@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,16 +16,16 @@ using System.Windows.Shapes;
 namespace MultimediaGame.Presentacion
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica de interacción para buttonsPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class buttonsPage : Page
     {
         public Page[] pages;
 
-        public MainWindow()
+        public buttonsPage()
         {
+            //pages = new Page[] { new AudioPage(this), new PhotosPage(this), new QuestionsPage(this) };
             InitializeComponent();
-            pages = new Page[] { new AudioPage(this), new PhotosPage(this), new QuestionsPage(this) };
         }
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
         {

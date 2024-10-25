@@ -9,8 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\imagen.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Dominio\" />
     <Folder Include="Persistencia\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\imagen.jpg" />
   </ItemGroup>
 
 </Project>
