@@ -26,16 +26,25 @@ namespace MultimediaGame.Presentacion
         private void btnQuestions_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = pages[2];
+            btnAudio.Visibility = Visibility.Collapsed;
+            btnPhotos.Visibility = Visibility.Collapsed;
+            btnQuestions.Visibility = Visibility.Collapsed;
         }
 
         private void btnPhotos_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = pages[1];
+            btnAudio.Visibility = Visibility.Collapsed;
+            btnPhotos.Visibility = Visibility.Collapsed;
+            btnQuestions.Visibility = Visibility.Collapsed;
         }
 
         private void btnAudio_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = pages[0];
+            btnAudio.Visibility = Visibility.Collapsed;
+            btnPhotos.Visibility = Visibility.Collapsed;
+            btnQuestions.Visibility = Visibility.Collapsed;
         }
     }
 }

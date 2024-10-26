@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\imagen.jpg" />
+    <Resource Include="Assets\imagen.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:MultimediaGame"
         mc:Ignorable="d"
         Title="MainWindow" MinWidth="1440" MinHeight="720" WindowStartupLocation="CenterScreen">
-    <Grid>
+
+    <Grid x:Name="grMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="240*"/>
             <RowDefinition Height="240*"/>
@@ -21,7 +22,7 @@
             <ColumnDefinition Width="205*"/>
             <ColumnDefinition Width="205*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="mainFrame" MinWidth="1440" MinHeight="716" NavigationUIVisibility="Hidden" Grid.ColumnSpan="7" Grid.RowSpan="3"/>
+        <Frame x:Name="mainFrame" MinWidth="1440" MinHeight="720" NavigationUIVisibility="Hidden" Grid.ColumnSpan="8" Grid.RowSpan="4"/>
         <Button x:Name="btnQuestions" Grid.Column="1" Content="Questions" Grid.Row="1" Click="btnQuestions_Click"/>
         <Button x:Name="btnPhotos" Grid.Column="3" Content="Photos" Grid.Row="1" Click="btnPhotos_Click"/>
         <Button x:Name="btnAudio" Grid.Column="5" Content="Audio" Grid.Row="1" Click="btnAudio_Click"/>
