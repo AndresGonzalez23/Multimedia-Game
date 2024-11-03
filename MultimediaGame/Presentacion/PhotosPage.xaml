@@ -10,6 +10,8 @@
 
     <Grid>
         <Image Source="/Assets/imagen.jpg"/>
+        <Image x:Name="imagenPregunta" HorizontalAlignment="Left" Height="147" Margin="232,91,0,0" VerticalAlignment="Top" Width="313"/>
+        <Label x:Name="statusLabel" Content="Label" HorizontalAlignment="Left" Margin="232,57,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
