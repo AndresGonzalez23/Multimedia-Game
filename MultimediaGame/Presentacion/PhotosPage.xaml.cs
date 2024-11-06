@@ -24,6 +24,9 @@ namespace MultimediaGame.Presentacion
     public partial class PhotosPage : Page
     {
         private MainWindow parentWindow;
+        private List<string> rutasImagenesDescargadas = new List<string>();
+        private Random random = new Random();
+
         public PhotosPage(MainWindow window)
         {
             parentWindow = window;
@@ -34,6 +37,8 @@ namespace MultimediaGame.Presentacion
         private async void PhotosPage_Loaded(object sender, RoutedEventArgs e)
         {
             await CargarImagenesAsync(); // Llama al método asincrónico al cargarse la página
+            CargarImagenAleatoriaEnControl();
+            btnNuevaFoto.IsEnabled = true;
         }
 
         private async Task CargarImagenesAsync()
@@ -60,13 +65,7 @@ namespace MultimediaGame.Presentacion
                 // Verificar si el archivo existe después de la descarga
                 if (File.Exists(rutaImagen))
                 {
-                    statusLabel.Content = $"La imagen '{imagen.Nombre}' ha sido descargada correctamente en: {rutaImagen}";
-                    // Cargar la imagen en el control Image
-                    BitmapImage bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(rutaImagen, UriKind.RelativeOrAbsolute);
-                    bitmap.EndInit();
-                    imagenPregunta.Source = bitmap;
+                    rutasImagenesDescargadas.Add(rutaImagen); 
                 }
                 else
                 {
@@ -75,7 +74,42 @@ namespace MultimediaGame.Presentacion
             }
         }
 
+        private void CargarImagenAleatoriaEnControl()
+        {
+            if (rutasImagenesDescargadas.Count > 0)
+            {
 
+                // Seleccionar un índice aleatorio de la lista
+                int indiceAleatorio = random.Next(rutasImagenesDescargadas.Count);
+                string rutaImagenAleatoria = rutasImagenesDescargadas[indiceAleatorio];
 
+                // Verificar que el archivo existe
+                if (File.Exists(rutaImagenAleatoria))
+                {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(rutaImagenAleatoria, UriKind.Absolute);
+                    bitmap.EndInit();
+
+                    // Asignar la imagen al control de la interfaz
+                    imagenPregunta.Source = bitmap;
+                    statusLabel.Content = $"Imagen aleatoria cargada desde: {rutaImagenAleatoria}"; // Mensaje de estado opcional
+                    rutasImagenesDescargadas.RemoveAt(indiceAleatorio);
+                }
+                else
+                {
+                    MessageBox.Show($"La imagen en '{rutaImagenAleatoria}' no fue encontrada.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay imágenes descargadas para mostrar.");
+            }
+        }
+
+        private void btnNuevaFoto_Click(object sender, RoutedEventArgs e)
+        {
+            CargarImagenAleatoriaEnControl();
+        }
     }
 }
