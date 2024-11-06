@@ -9,10 +9,10 @@
       Title="PhotosPage">
 
     <Grid>
-        <Image Source="/Assets/imagen.jpg"/>
-        <Image x:Name="imagenPregunta" HorizontalAlignment="Left" Height="147" Margin="232,91,0,0" VerticalAlignment="Top" Width="313"/>
+        <Image Source="../Assets/imagen.jpg"/>
+        <Image x:Name="imagenPregunta" Margin="199,134,240,134"/>
         <Label x:Name="statusLabel" Content="Label" HorizontalAlignment="Left" Margin="232,57,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnNuevaFoto" Content="Button" HorizontalAlignment="Left" Margin="355,248,0,0" VerticalAlignment="Top" Click="btnNuevaFoto_Click" IsEnabled="False"/>
+        <Button x:Name="btnNuevaFoto" Content="Button" HorizontalAlignment="Left" Margin="360,383,0,0" VerticalAlignment="Top" Click="btnNuevaFoto_Click" IsEnabled="False"/>
 
 
     </Grid>

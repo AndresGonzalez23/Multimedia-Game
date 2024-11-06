@@ -19,9 +19,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="Assets\imagen.jpg">
+		<Resource Include="Assets\imagen.jpg">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
+		</Resource>
 		<None Include="Assets\recursos.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>

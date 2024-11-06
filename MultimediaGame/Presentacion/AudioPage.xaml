@@ -9,7 +9,7 @@
       Title="AudioPage">
 
     <Grid>
-        <Image Source="/Assets/imagen.jpg"/>
+        <Image Source="../Assets/imagen.jpg"/>
 
 
     </Grid>
