@@ -7,14 +7,37 @@
   },
   {
     "id": 2,
-    "nombre": "acheron",
+    "nombre": "anillo",
     "tipo": "imagen",
-    "url": "https://drive.google.com/file/d/1f1yZ-f474bEidAW8vsd9m4iRk_sEMpp8/view?usp=sharing"
+    "url": "https://drive.google.com/file/d/1I3ndbh46LWqfffqbl89BRAk5CZ2xGKsU/view?usp=drive_link",
+    "pregunta": "¿En que saga de peliculas sale este objeto?"
   },
   {
     "id": 3,
-    "nombre": "fuxuan",
+    "nombre": "potter",
     "tipo": "imagen",
-    "url": "https://drive.google.com/file/d/1NDIkIuceGSiD1pAz_ledF6UWPQj50QhJ/view?usp=sharing"
+    "url": "https://drive.google.com/file/d/1GzFVVjs3CBTy5ULVURyoPOmaEyeIbXB8/view?usp=drive_link",
+    "pregunta": "A que saga literaria y cinematográfica pertenecen estos tres personajes?"
+  },
+  {
+    "id": 4,
+    "nombre": "principito",
+    "tipo": "imagen",
+    "url": "https://drive.google.com/file/d/1zIQVByDs4QM1uEyH3_k6O-oxLIeWTs98/view?usp=drive_link",
+    "pregunta": "¿A que famoso libro infantil pertenece esta portada?"
+  },
+  {
+    "id": 5,
+    "nombre": "reyes",
+    "tipo": "imagen",
+    "url": "https://drive.google.com/file/d/1kwi_NOFCtoDX94VLOoc2aHHvbV_PDEd1/view?usp=drive_link",
+    "pregunta": "¿A que libro de fantasia épica pertenece esta portada?"
+  },
+  {
+    "id": 6,
+    "nombre": "tyrion",
+    "tipo": "imagen",
+    "url": "https://drive.google.com/file/d/1KpaigMYKDz06Ua8JpBRycTX1tPwZcLu2/view?usp=drive_link",
+    "pregunta": "¿En que saga literaria y serie pertenece este personaje?"
   }
 ]

@@ -21,10 +21,12 @@ namespace MultimediaGame.Presentacion
     public partial class buttonsPage : Page
     {
         public Page[] pages;
+        private MainWindow parentWindow;
 
-        public buttonsPage()
+        public buttonsPage(MainWindow window)
         {
-            //pages = new Page[] { new AudioPage(this), new PhotosPage(this), new QuestionsPage(this) };
+            parentWindow = window;
+            pages = new Page[] { new AudioPage(parentWindow), new PhotosPage(parentWindow), new QuestionsPage(parentWindow) };
             InitializeComponent();
         }
         private void btnQuestions_Click(object sender, RoutedEventArgs e)

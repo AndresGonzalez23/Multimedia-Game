@@ -11,6 +11,8 @@ namespace MultimediaGame.Dominio
         public string Nombre { get; set; }
         public string Url { get; set; } // URL de visualización de Google Drive
         public string Tipo { get; set; } // "imagen", "audio", etc.
+        public string Pregunta { get; set; }
+        public string RutaLocal { get; set; }
 
         // Método para extraer el ID desde el enlace de visualización de Google Drive
         public string ExtraerIdDesdeEnlace()

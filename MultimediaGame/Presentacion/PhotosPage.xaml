@@ -9,11 +9,36 @@
       Title="PhotosPage">
 
     <Grid>
-        <Image Source="../Assets/imagen.jpg"/>
-        <Image x:Name="imagenPregunta" Margin="199,134,240,134"/>
-        <Label x:Name="statusLabel" Content="Label" HorizontalAlignment="Left" Margin="232,57,0,0" VerticalAlignment="Top"/>
+        <!--
         <Button x:Name="btnNuevaFoto" Content="Button" HorizontalAlignment="Left" Margin="360,383,0,0" VerticalAlignment="Top" Click="btnNuevaFoto_Click" IsEnabled="False"/>
-
+-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="113*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblPregunta" Content="DALE AL BOTON PARA PROBAR" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="48" Foreground="White" Visibility="Collapsed"/>
+        <Image x:Name="imagenPregunta" Grid.Row="1" Margin="300,0,296,0"/>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="12*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="71*"/>
+                <ColumnDefinition Width="260*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="260*"/>
+                <ColumnDefinition Width="71*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnNuevaFoto" Grid.Column="1" Content="Button" Grid.Row="1" Click="btnNuevaFoto_Click_1" IsEnabled="False" Visibility="Collapsed"/>
+            <Button x:Name="btnPreg2" Grid.Column="3" Content="Button" Grid.Row="1" IsEnabled="False" Visibility="Collapsed"/>
+            <Button x:Name="btnPreg3" Grid.Column="1" Content="Button" Grid.Row="3" Visibility="Collapsed" IsEnabled="False"/>
+            <Button x:Name="btnPreg4" Grid.Column="3" Content="Button" Grid.Row="3" IsEnabled="False" Visibility="Collapsed"/>
+        </Grid>
 
     </Grid>
 </Page>

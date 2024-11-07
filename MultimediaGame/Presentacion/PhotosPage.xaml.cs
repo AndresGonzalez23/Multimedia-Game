@@ -23,14 +23,15 @@ namespace MultimediaGame.Presentacion
     /// </summary>
     public partial class PhotosPage : Page
     {
+        
         private MainWindow parentWindow;
-        private List<string> rutasImagenesDescargadas = new List<string>();
+        private List<Recurso> rutasImagenesDescargadas = new List<Recurso>();
         private Random random = new Random();
 
         public PhotosPage(MainWindow window)
         {
-            parentWindow = window;
             InitializeComponent();
+            parentWindow = window;
             this.Loaded += PhotosPage_Loaded;
         }
 
@@ -38,7 +39,15 @@ namespace MultimediaGame.Presentacion
         {
             await CargarImagenesAsync(); // Llama al método asincrónico al cargarse la página
             CargarImagenAleatoriaEnControl();
+            lblPregunta.Visibility = Visibility.Visible;
+            btnNuevaFoto.Visibility = Visibility.Visible;
             btnNuevaFoto.IsEnabled = true;
+            btnPreg2.Visibility = Visibility.Visible;
+            btnPreg2.IsEnabled = true;
+            btnPreg3.Visibility = Visibility.Visible;
+            btnPreg3.IsEnabled = true;
+            btnPreg4.Visibility = Visibility.Visible;
+            btnPreg4.IsEnabled = true;
         }
 
         private async Task CargarImagenesAsync()
@@ -53,23 +62,34 @@ namespace MultimediaGame.Presentacion
             var imagenes = recursos.Where(r => r.Tipo == "imagen").ToList();
 
             string assetsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets");
+            List<string> imagenesDescargadas = new List<string>();
 
             foreach (var imagen in imagenes)
             {
                 // Asumiendo que imagen.FileId es el ID del archivo en Google Drive
                 string rutaImagen = Path.Combine(assetsPath, $"{imagen.Nombre}.jpg");
 
-                // Descargar la imagen desde Google Drive
-                await imagenService.DescargarImagenDesdeDriveAsync(imagen.Url, rutaImagen);
-
-                // Verificar si el archivo existe después de la descarga
-                if (File.Exists(rutaImagen))
+                // Verificar si la imagen ya ha sido descargada
+                if (!File.Exists(rutaImagen))
                 {
-                    rutasImagenesDescargadas.Add(rutaImagen); 
+                    // Descargar la imagen desde Google Drive
+                    await imagenService.DescargarImagenDesdeDriveAsync(imagen.Url, rutaImagen);
+
+                    // Verificar si el archivo existe después de la descarga
+                    if (File.Exists(rutaImagen))
+                    {
+                        imagen.RutaLocal = rutaImagen;
+                        rutasImagenesDescargadas.Add(imagen);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"La imagen {imagen.Nombre} no fue encontrada.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show($"La imagen {imagen.Nombre} no fue encontrada.");
+                    imagen.RutaLocal = rutaImagen;
+                    rutasImagenesDescargadas.Add(imagen);
                 }
             }
         }
@@ -81,35 +101,42 @@ namespace MultimediaGame.Presentacion
 
                 // Seleccionar un índice aleatorio de la lista
                 int indiceAleatorio = random.Next(rutasImagenesDescargadas.Count);
-                string rutaImagenAleatoria = rutasImagenesDescargadas[indiceAleatorio];
+                Recurso recursoAleatorio = rutasImagenesDescargadas[indiceAleatorio];
+
+                string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", $"{recursoAleatorio.Nombre}.jpg");
 
                 // Verificar que el archivo existe
-                if (File.Exists(rutaImagenAleatoria))
+                if (File.Exists(rutaImagen))
                 {
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(rutaImagenAleatoria, UriKind.Absolute);
+                    bitmap.UriSource = new Uri(rutaImagen, UriKind.Absolute);
                     bitmap.EndInit();
 
                     // Asignar la imagen al control de la interfaz
                     imagenPregunta.Source = bitmap;
-                    statusLabel.Content = $"Imagen aleatoria cargada desde: {rutaImagenAleatoria}"; // Mensaje de estado opcional
+                    lblPregunta.Content = recursoAleatorio.Pregunta;
                     rutasImagenesDescargadas.RemoveAt(indiceAleatorio);
                 }
                 else
                 {
-                    MessageBox.Show($"La imagen en '{rutaImagenAleatoria}' no fue encontrada.");
+                    MessageBox.Show($"La imagen en '{rutaImagen}' no fue encontrada.");
                 }
             }
             else
             {
-                MessageBox.Show("No hay imágenes descargadas para mostrar.");
+                MessageBox.Show("CakeHoot completado.");
+                parentWindow.mainFrame.Content = null;
+                parentWindow.btnAudio.Visibility = Visibility.Visible;
+                parentWindow.btnPhotos.Visibility = Visibility.Visible;
+                parentWindow.btnQuestions.Visibility = Visibility.Visible;
             }
         }
 
-        private void btnNuevaFoto_Click(object sender, RoutedEventArgs e)
+        private void btnNuevaFoto_Click_1(object sender, RoutedEventArgs e)
         {
             CargarImagenAleatoriaEnControl();
+            
         }
     }
 }

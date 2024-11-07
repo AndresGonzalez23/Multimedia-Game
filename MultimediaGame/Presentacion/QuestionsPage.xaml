@@ -14,7 +14,6 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="113*"/>
         </Grid.RowDefinitions>
-        <Image Source="../Assets/imagen.jpg" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
         <Label Content="CUANTAS PRUEBAS TENDRE QUE HACER?" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="48" Foreground="White"/>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>

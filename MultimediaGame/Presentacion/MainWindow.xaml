@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" MinWidth="1440" MinHeight="720" WindowStartupLocation="CenterScreen">
 
+    <Window.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Assets/imagen.jpg" Stretch="Fill"/>
+    </Window.Background>
+
     <Grid x:Name="grMain">
         <Grid.RowDefinitions>
             <RowDefinition Height="240*"/>
