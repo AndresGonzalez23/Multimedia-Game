@@ -26,8 +26,11 @@ namespace MultimediaGame.Presentacion
         
         private MainWindow parentWindow;
         private List<Recurso> rutasImagenesDescargadas = new List<Recurso>();
+        private List<string> listaRespuestas = new List<string>();
+        private string respuestaCorrecta;
         private Random random = new Random();
 
+        
         public PhotosPage(MainWindow window)
         {
             InitializeComponent();
@@ -38,16 +41,18 @@ namespace MultimediaGame.Presentacion
         private async void PhotosPage_Loaded(object sender, RoutedEventArgs e)
         {
             await CargarImagenesAsync(); // Llama al método asincrónico al cargarse la página
+            listaRespuestas = rutasImagenesDescargadas.Select(r => r.Respuesta).ToList();
             CargarImagenAleatoriaEnControl();
             lblPregunta.Visibility = Visibility.Visible;
-            btnNuevaFoto.Visibility = Visibility.Visible;
-            btnNuevaFoto.IsEnabled = true;
+            btnPreg1.Visibility = Visibility.Visible;
+            btnPreg1.IsEnabled = true;
             btnPreg2.Visibility = Visibility.Visible;
             btnPreg2.IsEnabled = true;
             btnPreg3.Visibility = Visibility.Visible;
             btnPreg3.IsEnabled = true;
             btnPreg4.Visibility = Visibility.Visible;
             btnPreg4.IsEnabled = true;
+            
         }
 
         private async Task CargarImagenesAsync()
@@ -104,6 +109,7 @@ namespace MultimediaGame.Presentacion
                 Recurso recursoAleatorio = rutasImagenesDescargadas[indiceAleatorio];
 
                 string rutaImagen = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", $"{recursoAleatorio.Nombre}.jpg");
+                respuestaCorrecta = recursoAleatorio.Respuesta;
 
                 // Verificar que el archivo existe
                 if (File.Exists(rutaImagen))
@@ -115,6 +121,8 @@ namespace MultimediaGame.Presentacion
 
                     // Asignar la imagen al control de la interfaz
                     imagenPregunta.Source = bitmap;
+                    List<string> opciones = crearRespuestas(respuestaCorrecta);
+                    RestaurarColoresBotones(opciones);
                     lblPregunta.Content = recursoAleatorio.Pregunta;
                     rutasImagenesDescargadas.RemoveAt(indiceAleatorio);
                 }
@@ -133,10 +141,47 @@ namespace MultimediaGame.Presentacion
             }
         }
 
-        private void btnNuevaFoto_Click_1(object sender, RoutedEventArgs e)
+        private void RestaurarColoresBotones(List<string> opciones)
         {
-            CargarImagenAleatoriaEnControl();
+            btnPreg1.Content = opciones[0];
+            btnPreg2.Content = opciones[1];
+            btnPreg3.Content = opciones[2];
+            btnPreg4.Content = opciones[3];
+            btnPreg1.Background = new SolidColorBrush(Colors.White); // o el color que prefieras como base
+            btnPreg2.Background = new SolidColorBrush(Colors.White);
+            btnPreg3.Background = new SolidColorBrush(Colors.White);
+            btnPreg4.Background = new SolidColorBrush(Colors.White);
+        }
             
+        private List<string> crearRespuestas(string respuesta)
+        {
+            var posiblesOpciones = new List<string> { respuesta };
+            while (posiblesOpciones.Count < 4)
+            {
+                string opcionAleatoria = listaRespuestas[random.Next(listaRespuestas.Count)];
+                if (!posiblesOpciones.Contains(opcionAleatoria))
+                {
+                    posiblesOpciones.Add(opcionAleatoria);
+                }
+            }
+            return posiblesOpciones.OrderBy(_ => random.Next()).ToList();
+        }
+
+        private void VerificarRespuesta(object sender, RoutedEventArgs e)
+        {
+            Button botonSeleccionado = sender as Button;
+
+            if (botonSeleccionado.Content.ToString() == respuestaCorrecta)
+            {
+                botonSeleccionado.Background = new SolidColorBrush(Colors.Green);
+                MessageBox.Show("¡Respuesta correcta!");
+            }
+            else
+            {
+                botonSeleccionado.Background = new SolidColorBrush(Colors.Red);
+                MessageBox.Show("Respuesta incorrecta");
+            }
+            CargarImagenAleatoriaEnControl();
         }
     }
 }
