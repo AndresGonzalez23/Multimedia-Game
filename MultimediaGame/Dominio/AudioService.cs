@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using NAudio.Wave;
+using static System.Net.WebRequestMethods;
 
 namespace MultimediaGame.Dominio
 {
@@ -27,6 +28,21 @@ namespace MultimediaGame.Dominio
 
                 Console.WriteLine($"Audio '{recurso.Nombre}' descargado en {rutaDestino}");
             }
+        }
+
+        public async Task DescargarAudioDesdeDriveAsync(string fileId, string destinoPath)
+        {
+            var url = fileId;
+
+            var response = await httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            using (var fileStream = new FileStream(destinoPath, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                await response.Content.CopyToAsync(fileStream);
+            }
+
+            Console.WriteLine($"Audio descargada desde Google Drive en {destinoPath}");
         }
 
         public async Task ReproducirAudioAsync(Recurso recurso)

@@ -1,20 +1,46 @@
 [
   {
     "id": 1,
-    "nombre": "Audio de Ejemplo",
+    "nombre": "volde",
     "tipo": "audio",
-    "url": "https://drive.google.com/file/d/1xYE_VA9vwDVHtNSknLOTRdoMIGvD4ka7/view?usp=drive_link"
+    "url": "https://drive.google.com/file/d/1AwTofODlromaL4rpUdVwTNaL1TSbjn5T/view?usp=drive_link",
+    "pregunta": "¿En que saga de peliculas sale este fragmento de audio?",
+    "respuesta": "Harry Potter"
   },
   {
     "id": 2,
+    "nombre": "truman",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/1pO3Lfhtb_RvQAOmOqzYGsirLSo5Mzo9m/view?usp=drive_link",
+    "pregunta": "¿En que pelicula sale este fragmento de audio?",
+    "respuesta": "El show de Truman"
+  },
+  {
+    "id": 3,
+    "nombre": "star",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/1k0ipadbMHWN_DPIa_CnTHE8g7BX54yOs/view?usp=drive_link",
+    "pregunta": "¿En que saga de peliculas sale este fragmento de audio?",
+    "respuesta": "Star Wars"
+  },
+  {
+    "id": 4,
+    "nombre": "shutter",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/1Snf_A57alqIhzrKM0wB0KhnYNKE2Tf4b/view?usp=drive_link",
+    "pregunta": "¿En que pelicula sale este fragmento de audio?",
+    "respuesta": "Shutter Island"
+  },
+  {
+    "id": 5,
     "nombre": "anillo",
     "tipo": "imagen",
     "url": "https://drive.google.com/file/d/1I3ndbh46LWqfffqbl89BRAk5CZ2xGKsU/view?usp=drive_link",
     "pregunta": "¿En que saga de peliculas sale este objeto?",
-    "respuesta":  "El señor de los anillos"
+    "respuesta": "El señor de los anillos"
   },
   {
-    "id": 3,
+    "id": 6,
     "nombre": "potter",
     "tipo": "imagen",
     "url": "https://drive.google.com/file/d/1GzFVVjs3CBTy5ULVURyoPOmaEyeIbXB8/view?usp=drive_link",
@@ -22,7 +48,7 @@
     "respuesta": "Harry Potter"
   },
   {
-    "id": 4,
+    "id": 7,
     "nombre": "principito",
     "tipo": "imagen",
     "url": "https://drive.google.com/file/d/1zIQVByDs4QM1uEyH3_k6O-oxLIeWTs98/view?usp=drive_link",
@@ -30,7 +56,7 @@
     "respuesta": "El principito"
   },
   {
-    "id": 5,
+    "id": 8,
     "nombre": "reyes",
     "tipo": "imagen",
     "url": "https://drive.google.com/file/d/1kwi_NOFCtoDX94VLOoc2aHHvbV_PDEd1/view?usp=drive_link",
@@ -38,7 +64,7 @@
     "respuesta": "El camino de los reyes"
   },
   {
-    "id": 6,
+    "id": 9,
     "nombre": "tyrion",
     "tipo": "imagen",
     "url": "https://drive.google.com/file/d/1KpaigMYKDz06Ua8JpBRycTX1tPwZcLu2/view?usp=drive_link",

@@ -7,10 +7,37 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AudioPage">
-
     <Grid>
-        <Image Source="../Assets/imagen.jpg"/>
-
-
+        <!--
+        <Button x:Name="btnNuevaFoto" Content="Button" HorizontalAlignment="Left" Margin="360,383,0,0" VerticalAlignment="Top" Click="btnNuevaFoto_Click" IsEnabled="False"/>
+-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="113*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblPregunta" Content="DALE AL BOTON PARA PROBAR" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="48" Foreground="White" Visibility="Collapsed"/>
+        <MediaElement x:Name="elementoAudio" Margin="300,0,296,0" UnloadedBehavior="Manual" Source="../Assets/imagen.jpg" Grid.Row="1" MediaEnded="elementoAudio_MediaEnded"/>
+        <Button x:Name="btnReproducir" Content="Reproducir Audio" Margin="300,0,296,0" Grid.Row="1" FontSize="36" IsEnabled="False" Click="btnReproducir_Click"/>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="12*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="71*"/>
+                <ColumnDefinition Width="260*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="260*"/>
+                <ColumnDefinition Width="71*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnPreg1" Grid.Column="1" Content="Button" Grid.Row="1" Click="VerificarRespuesta" IsEnabled="False" Visibility="Collapsed"/>
+            <Button x:Name="btnPreg2" Grid.Column="3" Content="Button" Grid.Row="1" IsEnabled="False" Visibility="Collapsed" Click="VerificarRespuesta"/>
+            <Button x:Name="btnPreg3" Grid.Column="1" Content="Button" Grid.Row="3" Visibility="Collapsed" IsEnabled="False" Click="VerificarRespuesta"/>
+            <Button x:Name="btnPreg4" Grid.Column="3" Content="Button" Grid.Row="3" IsEnabled="False" Visibility="Collapsed" Click="VerificarRespuesta"/>
+        </Grid>
     </Grid>
 </Page>
