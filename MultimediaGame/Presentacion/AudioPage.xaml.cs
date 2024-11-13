@@ -116,6 +116,7 @@ namespace MultimediaGame.Presentacion
             }
             else
             {
+                elementoAudio.Pause();
                 MessageBox.Show("CakeHoot completado.");
                 parentWindow.mainFrame.Content = null;
                 parentWindow.btnAudio.Visibility = Visibility.Visible;
@@ -142,7 +143,8 @@ namespace MultimediaGame.Presentacion
 
         private void btnReproducir_Click(object sender, RoutedEventArgs e)
         {
-                elementoAudio.Play(); // Reproducir el audio solo cuando el botón es 
+            elementoAudio.Position = TimeSpan.Zero;
+            elementoAudio.Play(); // Reproducir el audio solo cuando el botón es 
         }
 
         private List<string> crearRespuestas(string respuesta)

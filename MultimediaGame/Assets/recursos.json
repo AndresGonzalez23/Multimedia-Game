@@ -1,18 +1,18 @@
 [
   {
     "id": 1,
-    "nombre": "volde",
+    "nombre": "gandalf",
     "tipo": "audio",
-    "url": "https://drive.google.com/file/d/1AwTofODlromaL4rpUdVwTNaL1TSbjn5T/view?usp=drive_link",
-    "pregunta": "¿En que saga de peliculas sale este fragmento de audio?",
-    "respuesta": "Harry Potter"
+    "url": "https://drive.google.com/file/d/1ICSqS6Vo1Lc4yve94zkv1OvXra1nGJSw/view?usp=drive_link",
+    "pregunta": "¿En que saga de peliculas o serie sale este fragmento de audio?",
+    "respuesta": "El Señor de los Anillos"
   },
   {
     "id": 2,
     "nombre": "truman",
     "tipo": "audio",
     "url": "https://drive.google.com/file/d/1pO3Lfhtb_RvQAOmOqzYGsirLSo5Mzo9m/view?usp=drive_link",
-    "pregunta": "¿En que pelicula sale este fragmento de audio?",
+    "pregunta": "¿En que pelicula o serie sale este fragmento de audio?",
     "respuesta": "El show de Truman"
   },
   {
@@ -20,7 +20,7 @@
     "nombre": "star",
     "tipo": "audio",
     "url": "https://drive.google.com/file/d/1k0ipadbMHWN_DPIa_CnTHE8g7BX54yOs/view?usp=drive_link",
-    "pregunta": "¿En que saga de peliculas sale este fragmento de audio?",
+    "pregunta": "¿En que saga de peliculas o serie sale este fragmento de audio?",
     "respuesta": "Star Wars"
   },
   {
@@ -28,7 +28,7 @@
     "nombre": "shutter",
     "tipo": "audio",
     "url": "https://drive.google.com/file/d/1Snf_A57alqIhzrKM0wB0KhnYNKE2Tf4b/view?usp=drive_link",
-    "pregunta": "¿En que pelicula sale este fragmento de audio?",
+    "pregunta": "¿En que pelicula o serie sale este fragmento de audio?",
     "respuesta": "Shutter Island"
   },
   {
@@ -70,5 +70,29 @@
     "url": "https://drive.google.com/file/d/1KpaigMYKDz06Ua8JpBRycTX1tPwZcLu2/view?usp=drive_link",
     "pregunta": "¿En que saga literaria y serie pertenece este personaje?",
     "respuesta": "Juego de Tronos"
+  },
+  {
+    "id": 10,
+    "nombre": "titanic",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/1uJPCjdRFW16eQDzytC4uMf5IEzW1g2fp/view?usp=drive_link",
+    "pregunta": "¿En que película o serie sale este fragmento de audio?",
+    "respuesta": "Titanic"
+  },
+  {
+    "id": 11,
+    "nombre": "silver",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/1jRIjP9qLWmpNB-RJzWoRPlRVJ0bCgu66/view?usp=drive_link",
+    "pregunta": "¿En que película o serie sale este fragmento de audio?",
+    "respuesta": "El planeta del tesoro"
+  },
+  {
+    "id": 12,
+    "nombre": "joffrey",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/1rLiH--HFULp1kyJYf-HZ8yyJM5FNIyOS/view?usp=drive_link",
+    "pregunta": "¿En que película o serie sale este fragmento de audio?",
+    "respuesta": "Juego de tronos"
   }
 ]

@@ -8,9 +8,6 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AudioPage">
     <Grid>
-        <!--
-        <Button x:Name="btnNuevaFoto" Content="Button" HorizontalAlignment="Left" Margin="360,383,0,0" VerticalAlignment="Top" Click="btnNuevaFoto_Click" IsEnabled="False"/>
--->
         <Grid.RowDefinitions>
             <RowDefinition Height="35*"/>
             <RowDefinition Height="100*"/>
@@ -18,7 +15,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="lblPregunta" Content="DALE AL BOTON PARA PROBAR" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="48" Foreground="White" Visibility="Collapsed"/>
         <MediaElement x:Name="elementoAudio" Margin="300,0,296,0" UnloadedBehavior="Manual" Source="../Assets/imagen.jpg" Grid.Row="1" MediaEnded="elementoAudio_MediaEnded"/>
-        <Button x:Name="btnReproducir" Content="Reproducir Audio" Margin="300,0,296,0" Grid.Row="1" FontSize="36" IsEnabled="False" Click="btnReproducir_Click"/>
+        <Button x:Name="btnReproducir" Content="Reproducir Audio" Margin="300,0,296,0" Grid.Row="1" FontSize="36" IsEnabled="False" Click="btnReproducir_Click" MaxWidth="500" MaxHeight="250"/>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="12*"/>
