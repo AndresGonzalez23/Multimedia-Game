@@ -1,4 +1,4 @@
-# Multimedia Game
+# CakeHoot
 
 Proyecto realizado para la asignatura de Multimedia de la rama de Tecnologías de la Información en la Escuela Superior de Informática de Ciudad Real. Se trata de una aplicación multimedia de escritorio
 gamificada al estilo Kahoot, Trivial, etc. En este caso la temática estará centrada en libros y series varias, aunque es posible modificarlo añadiendo imágenes, audios o preguntas propias. 
