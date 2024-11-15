@@ -9,7 +9,7 @@ Hay trés modos de juego donde las preguntas se centrarán en un elemento multim
 -Fotos: Apartado centrado en la relación de imágenes
 -Audios: Apartado centrado en la relación de audios.
 
-En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Google Drive, para que la aplicación sea lo más ligera posible.
+En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Google Drive, para que sea lo más ligera posible.
 
 ## 🧍: Creador
 
