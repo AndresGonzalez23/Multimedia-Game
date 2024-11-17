@@ -29,6 +29,7 @@ namespace MultimediaGame.Presentacion
         private List<string> listaRespuestas = new List<string>();
         private string respuestaCorrecta;
         private Random random = new Random();
+        private int numeroAciertos = 0;
 
         
         public PhotosPage(MainWindow window)
@@ -133,7 +134,8 @@ namespace MultimediaGame.Presentacion
             }
             else
             {
-                MessageBox.Show("CakeHoot completado.");
+                MostrarMensajeConImagen();
+                numeroAciertos = 0;
                 parentWindow.mainFrame.Content = null;
                 parentWindow.btnAudio.Visibility = Visibility.Visible;
                 parentWindow.btnPhotos.Visibility = Visibility.Visible;
@@ -152,7 +154,33 @@ namespace MultimediaGame.Presentacion
             btnPreg3.Background = new SolidColorBrush(Colors.White);
             btnPreg4.Background = new SolidColorBrush(Colors.White);
         }
-            
+
+        private void MostrarMensajeConImagen()
+        {
+            string mensaje = $"CakeHoot completado. Número de aciertos: {numeroAciertos}";
+            string rutaImagen;
+            if (numeroAciertos > 9)
+            {
+                rutaImagen = "pack://application:,,,/Assets/tarta10.jpg";
+            }
+            else if (numeroAciertos > 6)
+            {
+                rutaImagen = "pack://application:,,,/Assets/tarta7.jpg";
+            }
+            else if (numeroAciertos > 4)
+            {
+                rutaImagen = "pack://application:,,,/Assets/tarta5.jpg";
+            }
+            else
+            {
+                rutaImagen = "pack://application:,,,/Assets/tarta3.jpg";
+            }
+
+
+            var messageBox = new finisgWindow(mensaje, rutaImagen);
+            messageBox.ShowDialog();
+        }
+
         private List<string> crearRespuestas(string respuesta)
         {
             var posiblesOpciones = new List<string> { respuesta };
@@ -173,6 +201,7 @@ namespace MultimediaGame.Presentacion
 
             if (botonSeleccionado.Content.ToString() == respuestaCorrecta)
             {
+                numeroAciertos++;
                 botonSeleccionado.Background = new SolidColorBrush(Colors.Green);
                 MessageBox.Show("¡Respuesta correcta!");
             }

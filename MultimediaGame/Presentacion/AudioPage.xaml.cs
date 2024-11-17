@@ -30,6 +30,7 @@ namespace MultimediaGame.Presentacion
         private string respuestaCorrecta;
         private string assetsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets");
         private Random random = new Random();
+        private int numeroAciertos = 0;
 
         public AudioPage(MainWindow window)
         {
@@ -117,7 +118,8 @@ namespace MultimediaGame.Presentacion
             else
             {
                 elementoAudio.Pause();
-                MessageBox.Show("CakeHoot completado.");
+                MostrarMensajeConImagen();
+                numeroAciertos = 0;
                 parentWindow.mainFrame.Content = null;
                 parentWindow.btnAudio.Visibility = Visibility.Visible;
                 parentWindow.btnPhotos.Visibility = Visibility.Visible;
@@ -147,6 +149,30 @@ namespace MultimediaGame.Presentacion
             elementoAudio.Play(); // Reproducir el audio solo cuando el botón es 
         }
 
+        private void MostrarMensajeConImagen()
+        {
+            string mensaje = $"CakeHoot completado. Número de aciertos: {numeroAciertos}";
+            string rutaImagen;
+            if (numeroAciertos > 9)
+            {
+                rutaImagen = "pack://application:,,,/Assets/tarta10.jpg";
+            }else if (numeroAciertos > 6)
+            {
+                rutaImagen = "pack://application:,,,/Assets/tarta7.jpg";
+            }else if(numeroAciertos > 4)
+            {
+                rutaImagen = "pack://application:,,,/Assets/tarta5.jpg";
+            }
+            else
+            {
+                rutaImagen = "pack://application:,,,/Assets/tarta3.jpg";
+            }
+            
+
+            var messageBox = new finisgWindow(mensaje, rutaImagen);
+            messageBox.ShowDialog();
+        }
+
         private List<string> crearRespuestas(string respuesta)
         {
             var posiblesOpciones = new List<string> { respuesta };
@@ -168,6 +194,7 @@ namespace MultimediaGame.Presentacion
 
             if (botonSeleccionado.Content.ToString() == respuestaCorrecta)
             {
+                numeroAciertos++;
                 botonSeleccionado.Background = new SolidColorBrush(Colors.Green);
                 MessageBox.Show("¡Respuesta correcta!");
             }

@@ -94,5 +94,29 @@
     "url": "https://drive.google.com/file/d/1rLiH--HFULp1kyJYf-HZ8yyJM5FNIyOS/view?usp=drive_link",
     "pregunta": "¿En que película o serie sale este fragmento de audio?",
     "respuesta": "Juego de tronos"
+  },
+  {
+    "id": 13,
+    "nombre": "maximo",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/1-OtWfWn0UjXNt8rxWxlSWZjhIcbSMLrJ/view?usp=drive_link",
+    "pregunta": "¿En que película o serie sale este fragmento de audio?",
+    "respuesta": "Gladiator"
+  },
+  {
+    "id": 14,
+    "nombre": "harry",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/1qNmUCrmt4_SXJcRFM_YRPnUlc64UxF7h/view?usp=drive_link",
+    "pregunta": "¿En que película o serie sale este fragmento de audio?",
+    "respuesta": "Harry Potter"
+  },
+  {
+    "id": 15,
+    "nombre": "stelar",
+    "tipo": "audio",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿En que película o serie sale este fragmento de audio?",
+    "respuesta": "Interstellar"
   }
 ]

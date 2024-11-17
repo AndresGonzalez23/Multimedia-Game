@@ -11,6 +11,10 @@
 	<ItemGroup>
 		<None Remove="Assets\imagen.jpg" />
 		<None Remove="Assets\recursos.json" />
+		<None Remove="Assets\tarta10.jpg" />
+		<None Remove="Assets\tarta3.jpg" />
+		<None Remove="Assets\tarta5.jpg" />
+		<None Remove="Assets\tarta7.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -26,6 +30,18 @@
 
 	<ItemGroup>
 	  <Resource Include="Assets\imagen.jpg">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Assets\tarta10.jpg">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Assets\tarta3.jpg">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Assets\tarta5.jpg">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Assets\tarta7.jpg">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	</ItemGroup>
