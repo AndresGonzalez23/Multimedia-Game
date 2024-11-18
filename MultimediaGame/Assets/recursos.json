@@ -118,5 +118,37 @@
     "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
     "pregunta": "¿En que película o serie sale este fragmento de audio?",
     "respuesta": "Interstellar"
+  },
+  {
+    "id": 16,
+    "nombre": "stelar",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Quién escribió El Hobbit?",
+    "respuesta": "J. R. R. Tolkien"
+  },
+  {
+    "id": 17,
+    "nombre": "stelar",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Quién escribió El Quijote?",
+    "respuesta": "Miguel de Cervantes"
+  },
+  {
+    "id": 18,
+    "nombre": "stelar",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Quien escribió Orgullo y Prejuicio?",
+    "respuesta": "Jane Austen"
+  },
+  {
+    "id": 19,
+    "nombre": "stelar",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Quien escribió Juego de Tronos?",
+    "respuesta": "George R. R. Martin"
   }
 ]

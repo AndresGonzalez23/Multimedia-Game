@@ -14,7 +14,7 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="113*"/>
         </Grid.RowDefinitions>
-        <Label Content="CUANTAS PRUEBAS TENDRE QUE HACER?" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="48" Foreground="White"/>
+        <Label x:Name="lblPregunta" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="48" Foreground="White"/>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="12*"/>
@@ -30,10 +30,10 @@
                 <ColumnDefinition Width="260*"/>
                 <ColumnDefinition Width="71*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnPreg1" Grid.Column="1" Content="Button" Grid.Row="1"/>
-            <Button x:Name="btnPreg2" Grid.Column="3" Content="Button" Grid.Row="1"/>
-            <Button x:Name="btnPreg3" Grid.Column="1" Content="Button" Grid.Row="3"/>
-            <Button x:Name="btnPreg4" Grid.Column="3" Content="Button" Grid.Row="3"/>
+            <Button x:Name="btnPreg1" Grid.Column="1" Content="Button" Grid.Row="1" Visibility="Hidden" Click="VerificarRespuesta"/>
+            <Button x:Name="btnPreg2" Grid.Column="3" Content="Button" Grid.Row="1" Visibility="Hidden" Click="VerificarRespuesta"/>
+            <Button x:Name="btnPreg3" Grid.Column="1" Content="Button" Grid.Row="3" Visibility="Hidden" Click="VerificarRespuesta"/>
+            <Button x:Name="btnPreg4" Grid.Column="3" Content="Button" Grid.Row="3" Visibility="Hidden" Click="VerificarRespuesta"/>
         </Grid>
 
 
