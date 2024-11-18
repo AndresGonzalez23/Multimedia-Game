@@ -151,23 +151,29 @@ namespace MultimediaGame.Presentacion
 
         private void MostrarMensajeConImagen()
         {
-            string mensaje = $"CakeHoot completado. Número de aciertos: {numeroAciertos}";
+            string mensaje;
             string rutaImagen;
             if (numeroAciertos > 9)
             {
+                mensaje = $"Que buen horneado. Número de aciertos: {numeroAciertos}";
                 rutaImagen = "pack://application:,,,/Assets/tarta10.jpg";
-            }else if (numeroAciertos > 6)
+            }
+            else if (numeroAciertos > 6)
             {
+                mensaje = $"Te ha faltado un trozo de tarta. Número de aciertos: {numeroAciertos}";
                 rutaImagen = "pack://application:,,,/Assets/tarta7.jpg";
-            }else if(numeroAciertos > 4)
+            }
+            else if (numeroAciertos > 4)
             {
+                mensaje = $"Al menos es un buen bizcocho. Número de aciertos: {numeroAciertos}";
                 rutaImagen = "pack://application:,,,/Assets/tarta5.jpg";
             }
             else
             {
+                mensaje = $"Falta hasta la levadura. Número de aciertos: {numeroAciertos}";
                 rutaImagen = "pack://application:,,,/Assets/tarta3.jpg";
             }
-            
+
 
             var messageBox = new finisgWindow(mensaje, rutaImagen);
             messageBox.ShowDialog();
