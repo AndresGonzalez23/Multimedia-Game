@@ -9,6 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Remove="Assets\fondo.jpg" />
 		<None Remove="Assets\imagen.jpg" />
 		<None Remove="Assets\recursos.json" />
 		<None Remove="Assets\tarta10.jpg" />
@@ -29,6 +30,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Resource Include="Assets\fondo.jpg">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
 	  <Resource Include="Assets\imagen.jpg">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
