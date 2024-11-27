@@ -47,9 +47,13 @@ namespace MultimediaGame.Presentacion
             CargarAudioAleatorioEnMediaElement();
             lblPregunta.Visibility = Visibility.Visible;
             btnPreg1.Visibility = Visibility.Visible;
+            btnPreg1.IsEnabled = true;
             btnPreg2.Visibility = Visibility.Visible;
+            btnPreg2.IsEnabled = true;
             btnPreg3.Visibility = Visibility.Visible;
+            btnPreg3.IsEnabled = true;
             btnPreg4.Visibility = Visibility.Visible;
+            btnPreg4.IsEnabled = true;
         }
 
         private async Task CargarAudiosAsync()
@@ -137,10 +141,6 @@ namespace MultimediaGame.Presentacion
             btnPreg2.Background = new SolidColorBrush(Colors.White);
             btnPreg3.Background = new SolidColorBrush(Colors.White);
             btnPreg4.Background = new SolidColorBrush(Colors.White);
-            btnPreg1.IsEnabled = false;
-            btnPreg2.IsEnabled = false;
-            btnPreg3.IsEnabled = false;
-            btnPreg4.IsEnabled = false;
         }
 
         private void btnReproducir_Click(object sender, RoutedEventArgs e)
