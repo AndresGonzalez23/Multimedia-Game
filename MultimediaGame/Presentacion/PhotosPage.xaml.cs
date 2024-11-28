@@ -180,7 +180,6 @@ namespace MultimediaGame.Presentacion
                 rutaImagen = "pack://application:,,,/Assets/tarta3.jpg";
             }
 
-
             var messageBox = new finisgWindow(mensaje, rutaImagen);
             messageBox.ShowDialog();
         }

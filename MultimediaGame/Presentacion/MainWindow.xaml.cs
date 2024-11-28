@@ -46,5 +46,17 @@ namespace MultimediaGame.Presentacion
             btnPhotos.Visibility = Visibility.Collapsed;
             btnQuestions.Visibility = Visibility.Collapsed;
         }
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                // Cambiar a la página específica (por ejemplo, HomePage)
+                mainFrame.Content = null;
+                btnAudio.Visibility = Visibility.Visible;
+                btnPhotos.Visibility = Visibility.Visible;
+                btnQuestions.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

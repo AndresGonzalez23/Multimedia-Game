@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MultimediaGame"
         mc:Ignorable="d"
-        Title="MainWindow" MinWidth="1440" MinHeight="720" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" MinWidth="1440" MinHeight="720" WindowStartupLocation="CenterScreen"
+        PreviewKeyDown="Window_PreviewKeyDown">
 
     <Window.Resources>
         <Style TargetType="Button">
