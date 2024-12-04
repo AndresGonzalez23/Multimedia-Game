@@ -29,6 +29,7 @@ namespace MultimediaGame.Presentacion
             btnAudio.Visibility = Visibility.Collapsed;
             btnPhotos.Visibility = Visibility.Collapsed;
             btnQuestions.Visibility = Visibility.Collapsed;
+            lblTítulo.Visibility = Visibility.Collapsed;
         }
 
         private void btnPhotos_Click(object sender, RoutedEventArgs e)
@@ -37,6 +38,7 @@ namespace MultimediaGame.Presentacion
             btnAudio.Visibility = Visibility.Collapsed;
             btnPhotos.Visibility = Visibility.Collapsed;
             btnQuestions.Visibility = Visibility.Collapsed;
+            lblTítulo.Visibility = Visibility.Collapsed;
         }
 
         private void btnAudio_Click(object sender, RoutedEventArgs e)
@@ -45,6 +47,7 @@ namespace MultimediaGame.Presentacion
             btnAudio.Visibility = Visibility.Collapsed;
             btnPhotos.Visibility = Visibility.Collapsed;
             btnQuestions.Visibility = Visibility.Collapsed;
+            lblTítulo.Visibility = Visibility.Collapsed;
         }
 
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -56,6 +59,7 @@ namespace MultimediaGame.Presentacion
                 btnAudio.Visibility = Visibility.Visible;
                 btnPhotos.Visibility = Visibility.Visible;
                 btnQuestions.Visibility = Visibility.Visible;
+                lblTítulo.Visibility = Visibility.Visible;
             }
         }
     }

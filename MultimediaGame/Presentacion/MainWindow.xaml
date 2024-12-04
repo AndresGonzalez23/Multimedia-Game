@@ -62,6 +62,7 @@
         <Button x:Name="btnQuestions" Grid.Column="1" Content="Questions" Grid.Row="1" Click="btnQuestions_Click" Margin="15,30,15,30"/>
         <Button x:Name="btnPhotos" Grid.Column="3" Content="Photos" Grid.Row="1" Click="btnPhotos_Click" Margin="15,30,15,30"/>
         <Button x:Name="btnAudio" Grid.Column="5" Content="Audio" Grid.Row="1" Click="btnAudio_Click" Margin="15,30,15,30"/>
+        <Label x:Name="lblTítulo" Content="Bienvenido a CakeHoot" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="7" FontSize="72" FontFamily="Eras ITC" Foreground="White"/>
 
     </Grid>
 </Window>

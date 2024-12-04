@@ -73,6 +73,7 @@ namespace MultimediaGame.Presentacion
                 parentWindow.btnAudio.Visibility = Visibility.Visible;
                 parentWindow.btnPhotos.Visibility = Visibility.Visible;
                 parentWindow.btnQuestions.Visibility = Visibility.Visible;
+                parentWindow.lblTítulo.Visibility = Visibility.Visible;
             }
         }
 

@@ -121,7 +121,7 @@
   },
   {
     "id": 16,
-    "nombre": "stelar",
+    "nombre": "hobbit",
     "tipo": "pregunta",
     "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
     "pregunta": "¿Quién escribió El Hobbit?",
@@ -129,7 +129,7 @@
   },
   {
     "id": 17,
-    "nombre": "stelar",
+    "nombre": "quijote",
     "tipo": "pregunta",
     "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
     "pregunta": "¿Quién escribió El Quijote?",
@@ -137,7 +137,7 @@
   },
   {
     "id": 18,
-    "nombre": "stelar",
+    "nombre": "austen",
     "tipo": "pregunta",
     "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
     "pregunta": "¿Quién escribió Orgullo y Prejuicio?",
@@ -145,7 +145,7 @@
   },
   {
     "id": 19,
-    "nombre": "stelar",
+    "nombre": "tronos",
     "tipo": "pregunta",
     "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
     "pregunta": "¿Quién escribió Juego de Tronos?",
@@ -190,5 +190,53 @@
     "url": "https://drive.google.com/file/d/153bZ_dYcgdWvZnOgrVMOGI-2RHoX6Obd/view?usp=drive_link",
     "pregunta": "¿En qué película salen estos personajes?",
     "respuesta": "Avatar"
+  },
+  {
+    "id": 25,
+    "nombre": "harrypotter",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Qué famosa saga de libros escribió J. K. Rowling?",
+    "respuesta": "Harry Potter"
+  },
+  {
+    "id": 26,
+    "nombre": "dune",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Que adaptación de una saga de libros de ciencia ficción gano 6 Oscars en el año 2022?",
+    "respuesta": "Dune"
+  },
+  {
+    "id": 27,
+    "nombre": "parasite",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Qué película surcoreana ganó el Óscar a Mejor Película en 2020?",
+    "respuesta": "Parásitos"
+  },
+  {
+    "id": 28,
+    "nombre": "rueda",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Qué famosa saga de libros de fantasia ha sido adaptada a formato serie por Amazon?",
+    "respuesta": "La Rueda del Tiempo"
+  },
+  {
+    "id": 29,
+    "nombre": "mandalorian",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Cómo se llama la serie del universo Star Wars protagonizada por un cazarrecompensas?",
+    "respuesta": "The Mandalorian"
+  },
+  {
+    "id": 30,
+    "nombre": "house",
+    "tipo": "pregunta",
+    "url": "https://drive.google.com/file/d/14gboGrmb49IHCaTLm6TNHNIdnwgbKU9p/view?usp=drive_link",
+    "pregunta": "¿Cómo se llama la precuela de Juego de Tronos estrenada en 2022?",
+    "respuesta": "La Casa del Dragón"
   }
 ]
