@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MultimediaGame.Presentacion"
         mc:Ignorable="d"
-        Title="CakeHoot" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+        Title="CakeHoot" Height="300" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+   
+    <Window.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Assets/fondo.jpg" Stretch="Fill"/>
+    </Window.Background>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="150*"/>
@@ -13,11 +18,10 @@
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
 
-        <Image x:Name="imagenTarta" Width="200" Height="100" Grid.Row="0" Margin="10,10,10,10"/>
+        <Image x:Name="imagenTarta" Grid.Row="0" Margin="10,10,10,10"/>
 
         <TextBlock x:Name="txtMessage" Text="Que buen resultado" 
-                   FontSize="16" TextWrapping="Wrap" TextAlignment="Center" 
-                   Margin="10" Grid.Row="1"/>
+                   FontSize="18" TextWrapping="Wrap" TextAlignment="Center" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
 
         <Button Content="Aceptar" Width="100" Height="30" Grid.Row="2" 
                 HorizontalAlignment="Center" Margin="10" Click="Button_Click"/>

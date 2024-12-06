@@ -70,6 +70,7 @@
             <Button x:Name="btnPreg3" Grid.Column="1" Content="Button" Grid.Row="3" Visibility="Collapsed" IsEnabled="False" Click="VerificarRespuesta" FontSize="16" Margin="5,5,5,5"/>
             <Button x:Name="btnPreg4" Grid.Column="3" Content="Button" Grid.Row="3" IsEnabled="False" Visibility="Collapsed" Click="VerificarRespuesta" FontSize="16" Margin="5,5,5,5"/>
         </Grid>
+        <Label x:Name="lblCarga" Content="Cargando las imagenes, espera un poco, por favor" Grid.Row="1" FontSize="48" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
     </Grid>
 </Page>

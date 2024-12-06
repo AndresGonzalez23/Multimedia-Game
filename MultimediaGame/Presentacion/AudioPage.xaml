@@ -45,8 +45,8 @@
             <RowDefinition Height="113*"/>
         </Grid.RowDefinitions>
         <Label x:Name="lblPregunta" Content="DALE AL BOTON PARA PROBAR" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" FontSize="48" Foreground="White" Visibility="Collapsed"/>
-        <MediaElement x:Name="elementoAudio" Margin="300,0,296,0" UnloadedBehavior="Manual" Source="../Assets/imagen.jpg" Grid.Row="1" MediaEnded="elementoAudio_MediaEnded"/>
-        <Button x:Name="btnReproducir" Content="Reproducir Audio" Margin="300,0,296,0" Grid.Row="1" FontSize="36" IsEnabled="False" Click="btnReproducir_Click" MaxWidth="500" MaxHeight="250"/>
+        <MediaElement x:Name="elementoAudio" Margin="300,0,296,0" UnloadedBehavior="Manual" Grid.Row="1" MediaEnded="elementoAudio_MediaEnded"/>
+        <Button x:Name="btnReproducir" Content="Reproducir Audio" Margin="300,0,296,0" Grid.Row="1" FontSize="36" IsEnabled="False" Click="btnReproducir_Click" MaxWidth="500" MaxHeight="250" Visibility="Collapsed"/>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="12*"/>
@@ -67,5 +67,6 @@
             <Button x:Name="btnPreg3" Grid.Column="1" Content="Button" Grid.Row="3" Visibility="Collapsed" IsEnabled="False" Click="VerificarRespuesta" FontSize="16" Margin="5,5,5,5"/>
             <Button x:Name="btnPreg4" Grid.Column="3" Content="Button" Grid.Row="3" IsEnabled="False" Visibility="Collapsed" Click="VerificarRespuesta" FontSize="16" Margin="5,5,5,5"/>
         </Grid>
+        <Label x:Name="lblCarga" Content="Cargando las imagenes, espera un poco, por favor" Grid.Row="1" FontSize="48" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Page>

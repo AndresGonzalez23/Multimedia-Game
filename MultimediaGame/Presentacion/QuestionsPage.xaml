@@ -44,8 +44,17 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="113*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="lblPregunta" Grid.Row="1" FontSize="48" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="60,10,60,10"/>
-        <Grid Grid.Row="2">
+        <Label x:Name="lblPregunta" Grid.Row="1" FontSize="48" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,10,0">
+            <Label.ContentTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" 
+                               TextWrapping="Wrap" 
+                               TextAlignment="Center" 
+                               />
+                </DataTemplate>
+            </Label.ContentTemplate>
+        </Label>
+            <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="12*"/>
                 <RowDefinition Height="100*"/>

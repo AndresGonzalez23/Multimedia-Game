@@ -45,6 +45,8 @@ namespace MultimediaGame.Presentacion
             // Aquí puedes continuar con la lógica de la página de audio
             listaRespuestas = rutasAudiosDescargados.Select(r => r.Respuesta).ToList();
             CargarAudioAleatorioEnMediaElement();
+            lblCarga.Visibility = Visibility.Collapsed;
+            btnReproducir.Visibility = Visibility.Visible;
             lblPregunta.Visibility = Visibility.Visible;
             btnPreg1.Visibility = Visibility.Visible;
             btnPreg1.IsEnabled = true;

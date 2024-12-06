@@ -44,6 +44,7 @@ namespace MultimediaGame.Presentacion
             await CargarImagenesAsync(); // Llama al método asincrónico al cargarse la página
             listaRespuestas = rutasImagenesDescargadas.Select(r => r.Respuesta).ToList();
             CargarImagenAleatoriaEnControl();
+            lblCarga.Visibility = Visibility.Collapsed;
             lblPregunta.Visibility = Visibility.Visible;
             btnPreg1.Visibility = Visibility.Visible;
             btnPreg1.IsEnabled = true;
