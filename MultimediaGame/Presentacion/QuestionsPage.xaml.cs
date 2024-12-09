@@ -84,7 +84,9 @@ namespace MultimediaGame.Presentacion
             var recursos = recursoRepository.ObtenerRecursos();
             var preguntas = recursos.Where(r => r.Tipo == "pregunta").ToList();
 
-            foreach (var pregunta in preguntas)
+            var maxPreguntas = 10;
+            var preguntasAleatorias = preguntas.OrderBy(_ => random.Next()).Take(maxPreguntas).ToList();
+            foreach (var pregunta in preguntasAleatorias)
             {
                 preguntasDescargadas.Add(pregunta);
             }

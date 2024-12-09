@@ -28,6 +28,7 @@ namespace MultimediaGame.Presentacion
         private List<Recurso> rutasImagenesDescargadas = new List<Recurso>();
         private List<string> listaRespuestas = new List<string>();
         private string respuestaCorrecta;
+        private const int maxPreguntas = 10;
         private Random random = new Random();
         private int numeroAciertos = 0;
 
@@ -66,7 +67,10 @@ namespace MultimediaGame.Presentacion
             var recursos = recursoRepository.ObtenerRecursos();
 
             // Filtrar solo los recursos que son imágenes
-            var imagenes = recursos.Where(r => r.Tipo == "imagen").ToList();
+            var imagenes = recursos.Where(r => r.Tipo == "imagen")
+                           .OrderBy(_ => random.Next()) // Barajar aleatoriamente
+                           .Take(maxPreguntas)          // Tomar máximo 10
+                           .ToList();
 
             string assetsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets");
             List<string> imagenesDescargadas = new List<string>();

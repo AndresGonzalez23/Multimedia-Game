@@ -31,6 +31,7 @@ namespace MultimediaGame.Presentacion
         private string assetsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets");
         private Random random = new Random();
         private int numeroAciertos = 0;
+        private const int maxPreguntas = 10;
 
         public AudioPage(MainWindow window)
         {
@@ -64,7 +65,10 @@ namespace MultimediaGame.Presentacion
             var recursos = recursoRepository.ObtenerRecursos();
 
             // Filtrar los recursos que son de tipo "audio"
-            var audios = recursos.Where(r => r.Tipo == "audio").ToList();
+            var audios = recursos.Where(r => r.Tipo == "audio")
+                           .OrderBy(_ => random.Next()) // Barajar aleatoriamente
+                           .Take(maxPreguntas)          // Tomar máximo 10
+                           .ToList();
 
             foreach (var audio in audios)
             {
