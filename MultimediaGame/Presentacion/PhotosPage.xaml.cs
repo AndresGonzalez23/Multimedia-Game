@@ -43,6 +43,14 @@ namespace MultimediaGame.Presentacion
         private async void PhotosPage_Loaded(object sender, RoutedEventArgs e)
         {
             await CargarImagenesAsync(); // Llama al método asincrónico al cargarse la página
+            if (rutasImagenesDescargadas.Count < 4)
+            {
+                // Mostrar un mensaje indicando que no hay suficientes preguntas
+                MessageBox.Show("No hay suficientes preguntas disponibles para jugar.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                // Salir del método si no hay suficientes preguntas
+                return;
+            }
             listaRespuestas = rutasImagenesDescargadas.Select(r => r.Respuesta).ToList();
             CargarImagenAleatoriaEnControl();
             lblCarga.Visibility = Visibility.Collapsed;
@@ -63,47 +71,55 @@ namespace MultimediaGame.Presentacion
             var recursoRepository = new RecursoRepository();
             var imagenService = new ImagenService();
 
-            // Obtener todos los recursos desde el archivo JSON
             var recursos = recursoRepository.ObtenerRecursos();
 
             // Filtrar solo los recursos que son imágenes
             var imagenes = recursos.Where(r => r.Tipo == "imagen")
                            .OrderBy(_ => random.Next()) // Barajar aleatoriamente
-                           .Take(maxPreguntas)          // Tomar máximo 10
                            .ToList();
 
-            string assetsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets");
-            List<string> imagenesDescargadas = new List<string>();
-
-            foreach (var imagen in imagenes)
+            // Si hay menos de 4 imágenes, mostrar mensaje en lblCarga y salir
+            if (imagenes.Count < 4)
             {
-                // Asumiendo que imagen.FileId es el ID del archivo en Google Drive
-                string rutaImagen = Path.Combine(assetsPath, $"{imagen.Nombre}.jpg");
+                lblCarga.Content = "No hay suficientes imágenes disponibles para jugar.";
+                lblCarga.Visibility = Visibility.Visible;
+                lblPregunta.Visibility = Visibility.Collapsed;
+                btnPreg1.Visibility = Visibility.Collapsed;
+                btnPreg2.Visibility = Visibility.Collapsed;
+                btnPreg3.Visibility = Visibility.Collapsed;
+                btnPreg4.Visibility = Visibility.Collapsed;
+                parentWindow.mainFrame.Content = null;
+                parentWindow.btnAudio.Visibility = Visibility.Visible;
+                parentWindow.btnPhotos.Visibility = Visibility.Visible;
+                parentWindow.btnQuestions.Visibility = Visibility.Visible;
+                parentWindow.lblTítulo.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                string assetsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets");
 
-                // Verificar si la imagen ya ha sido descargada
-                if (!File.Exists(rutaImagen))
+                foreach (var imagen in imagenes.Take(maxPreguntas))
                 {
-                    // Descargar la imagen desde Google Drive
-                    await imagenService.DescargarImagenDesdeDriveAsync(imagen.Url, rutaImagen);
+                    string rutaImagen = Path.Combine(assetsPath, $"{imagen.Nombre}.jpg");
 
-                    // Verificar si el archivo existe después de la descarga
-                    if (File.Exists(rutaImagen))
+                    if (!File.Exists(rutaImagen))
+                    {
+                        await imagenService.DescargarImagenDesdeDriveAsync(imagen.Url, rutaImagen);
+                        if (File.Exists(rutaImagen))
+                        {
+                            imagen.RutaLocal = rutaImagen;
+                            rutasImagenesDescargadas.Add(imagen);
+                        }
+                    }
+                    else
                     {
                         imagen.RutaLocal = rutaImagen;
                         rutasImagenesDescargadas.Add(imagen);
                     }
-                    else
-                    {
-                        MessageBox.Show($"La imagen {imagen.Nombre} no fue encontrada.");
-                    }
-                }
-                else
-                {
-                    imagen.RutaLocal = rutaImagen;
-                    rutasImagenesDescargadas.Add(imagen);
                 }
             }
         }
+
 
         private void CargarImagenAleatoriaEnControl()
         {

@@ -44,6 +44,14 @@ namespace MultimediaGame.Presentacion
         {
             await CargarAudiosAsync();
             // Aquí puedes continuar con la lógica de la página de audio
+            if (rutasAudiosDescargados.Count < 4)
+            {
+                // Mostrar un mensaje indicando que no hay suficientes preguntas
+                MessageBox.Show("No hay suficientes preguntas disponibles para jugar.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                // Salir del método si no hay suficientes preguntas
+                return;
+            }
             listaRespuestas = rutasAudiosDescargados.Select(r => r.Respuesta).ToList();
             CargarAudioAleatorioEnMediaElement();
             lblCarga.Visibility = Visibility.Collapsed;
@@ -65,35 +73,60 @@ namespace MultimediaGame.Presentacion
             var recursos = recursoRepository.ObtenerRecursos();
 
             // Filtrar los recursos que son de tipo "audio"
-            var audios = recursos.Where(r => r.Tipo == "audio")
-                           .OrderBy(_ => random.Next()) // Barajar aleatoriamente
-                           .Take(maxPreguntas)          // Tomar máximo 10
-                           .ToList();
+            var audios = recursos.Where(r => r.Tipo == "audio").ToList();
 
-            foreach (var audio in audios)
+            // Verificar si hay menos de 4 recursos
+            if (audios.Count < 4)
             {
-                string rutaAudio = Path.Combine(assetsPath, $"{audio.Nombre}.mp3");
+                lblCarga.Content = "No hay suficientes recursos de audio para jugar. Se necesitan al menos 4.";
+                lblCarga.Visibility = Visibility.Visible;
 
-                if (!File.Exists(rutaAudio))
+                // Ocultar o desactivar elementos de la interfaz
+                btnReproducir.Visibility = Visibility.Collapsed;
+                lblPregunta.Visibility = Visibility.Collapsed;
+                btnPreg1.Visibility = Visibility.Collapsed;
+                btnPreg2.Visibility = Visibility.Collapsed;
+                btnPreg3.Visibility = Visibility.Collapsed;
+                btnPreg4.Visibility = Visibility.Collapsed;
+                parentWindow.mainFrame.Content = null;
+                parentWindow.btnAudio.Visibility = Visibility.Visible;
+                parentWindow.btnPhotos.Visibility = Visibility.Visible;
+                parentWindow.btnQuestions.Visibility = Visibility.Visible;
+                parentWindow.lblTítulo.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                // Continuar con la lógica habitual si hay suficientes recursos
+                audios = audios.OrderBy(_ => random.Next()) // Barajar aleatoriamente
+                               .Take(maxPreguntas)          // Tomar máximo `maxPreguntas`
+                               .ToList();
+
+                foreach (var audio in audios)
                 {
-                    await audioService.DescargarAudioAsync(audio, rutaAudio);
-                    if (File.Exists(rutaAudio))
+                    string rutaAudio = Path.Combine(assetsPath, $"{audio.Nombre}.mp3");
+
+                    if (!File.Exists(rutaAudio))
+                    {
+                        await audioService.DescargarAudioAsync(audio, rutaAudio);
+                        if (File.Exists(rutaAudio))
+                        {
+                            audio.RutaLocal = rutaAudio;
+                            rutasAudiosDescargados.Add(audio);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"El audio {audio.Nombre} no fue encontrado.");
+                        }
+                    }
+                    else
                     {
                         audio.RutaLocal = rutaAudio;
                         rutasAudiosDescargados.Add(audio);
                     }
-                    else
-                    {
-                        MessageBox.Show($"La imagen {audio.Nombre} no fue encontrada.");
-                    }
-                }
-                else
-                {
-                    audio.RutaLocal = rutaAudio;
-                    rutasAudiosDescargados.Add(audio);
                 }
             }
         }
+
 
         private void CargarAudioAleatorioEnMediaElement()
         {

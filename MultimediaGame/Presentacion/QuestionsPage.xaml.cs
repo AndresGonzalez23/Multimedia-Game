@@ -38,6 +38,15 @@ namespace MultimediaGame.Presentacion
         private async void QuestionPage_Loaded(object sender, RoutedEventArgs e)
         {
             await CargarPreguntasAsync(); // Llama al método asincrónico al cargarse la página
+                                          // Verificar si hay menos de 4 preguntas descargadas
+            if (preguntasDescargadas.Count < 4)
+            {
+                // Mostrar un mensaje indicando que no hay suficientes preguntas
+                MessageBox.Show("No hay suficientes preguntas disponibles para jugar.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                // Salir del método si no hay suficientes preguntas
+                return;
+            }
             listaRespuestas = preguntasDescargadas.Select(r => r.Respuesta).ToList();
             CargarPreguntasAleatoriasEnControl();
             lblPregunta.Visibility = Visibility.Visible;
@@ -58,7 +67,6 @@ namespace MultimediaGame.Presentacion
             {
                 int indiceAleatorio = random.Next(preguntasDescargadas.Count);
                 Recurso recursoAleatorio = preguntasDescargadas[indiceAleatorio];
-
                 respuestaCorrecta = recursoAleatorio.Respuesta;
                 List<string> opciones = crearRespuestas(respuestaCorrecta);
                 RestaurarColoresBotones(opciones);
@@ -81,16 +89,44 @@ namespace MultimediaGame.Presentacion
         {
             var recursoRepository = new RecursoRepository();
 
+            // Obtener todos los recursos desde el archivo JSON
             var recursos = recursoRepository.ObtenerRecursos();
+
+            // Filtrar solo los recursos que son preguntas
             var preguntas = recursos.Where(r => r.Tipo == "pregunta").ToList();
 
-            var maxPreguntas = 10;
-            var preguntasAleatorias = preguntas.OrderBy(_ => random.Next()).Take(maxPreguntas).ToList();
-            foreach (var pregunta in preguntasAleatorias)
+            // Verificar si hay menos de 4 preguntas
+            if (preguntas.Count < 4)
             {
-                preguntasDescargadas.Add(pregunta);
+                lblPregunta.Content = "No hay suficientes preguntas disponibles para jugar.";
+                lblPregunta.Visibility = Visibility.Visible;
+
+                // Ocultar controles relacionados con el juego
+                lblPregunta.Visibility = Visibility.Collapsed;
+                btnPreg1.Visibility = Visibility.Collapsed;
+                btnPreg2.Visibility = Visibility.Collapsed;
+                btnPreg3.Visibility = Visibility.Collapsed;
+                btnPreg4.Visibility = Visibility.Collapsed;
+                parentWindow.mainFrame.Content = null;
+                parentWindow.btnAudio.Visibility = Visibility.Visible;
+                parentWindow.btnPhotos.Visibility = Visibility.Visible;
+                parentWindow.btnQuestions.Visibility = Visibility.Visible;
+                parentWindow.lblTítulo.Visibility = Visibility.Visible;
+                return;
             }
+            else
+            {
+                // Seleccionar preguntas aleatorias hasta el máximo permitido
+                var maxPreguntas = 10;
+                var preguntasAleatorias = preguntas.OrderBy(_ => random.Next()).Take(maxPreguntas).ToList();
+
+                foreach (var pregunta in preguntasAleatorias)
+                {
+                    preguntasDescargadas.Add(pregunta);
+                }
+            } 
         }
+
 
         private void RestaurarColoresBotones(List<string> opciones)
         {
