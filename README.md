@@ -5,9 +5,9 @@ gamificada al estilo Kahoot, Trivial, etc. En este caso la temática estará cen
 
 Hay trés modos de juego donde las preguntas se centrarán en un elemento multimedia diferente:
 
--Preguntas: Apartedo centrado en el texto
--Fotos: Apartado centrado en la relación de imágenes
--Audios: Apartado centrado en la relación de audios.
+    - Preguntas: Apartedo centrado en el texto
+    - Fotos: Apartado centrado en la relación de imágenes
+    - Audios: Apartado centrado en la relación de audios.
 
 En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Google Drive, para que sea lo más ligera posible.
 
@@ -17,28 +17,31 @@ En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Goog
 
 ## ⚙️ Tecnologías Usadas
 
-- C#
-- WPF
-- Paquetes NuGet
+    - C#
+    - WPF
+    - Paquetes NuGet
 
 ## 📖 Modificación de las preguntas
 
 Si quieres modificar el juego para hacer diferentes preguntas o enfocarlo a otras tematicas solo debes entrar en el .json y modificarlo usando la siguiente plantilla:
+        ```json
     {
       "id": 1,
       "nombre": "gandalf",
       "tipo": "audio",
-      "url": "https://drive.google.com/file/d/1ICSqS6Vo1Lc4yve94zkv1OvXra1nGJSw/view?usp=drive_link",
-      "pregunta": "¿En qué saga de peliculas o serie sale este fragmento de audio?",
+      "url": "https://drive.google.com/file/d/1ICSqS6Vo1Lc4yve94Zkv1OxXralnGJ5w/view?usp=drive_link",
+      "pregunta": "¿En qué saga de películas o serie sale este fragmento de audio?",
       "respuesta": "El Señor de los Anillos"
-    }
+    }```
 
-Lo más importante a la hora de modificar el JSON es
-- Que el nombre coincida con el que tiene el archivo subido en Google Drive
-- Que el archivo este accesible para todo el mundo que tenga el enlace
-- 
+Lo más importante a la hora de modificar el JSON es:
 
+    - Que el nombre coincida con el que tiene el archivo subido en Google Drive.
+    - Que el archivo este accesible para todo el mundo que tenga el enlace.
+    - Cambiar la pregunta y la respuesta.
 
+⚠️¡Aviso!
+   El apartado de preguntas también requiere un enlace, pero este no se usará por lo que podríamos usar un enlace por defecto.
 
 ## 🛠️ Ejecución
 
