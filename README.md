@@ -19,7 +19,18 @@ En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Goog
 
 - C#
 - WPF
+- Paquetes NuGet
 
 ## 🛠️ Ejecución
 
-Se actualizará más tarde
+Hay dos opciones para ejecutar el proyecto, usar un ejecutable o ejecutarlo desde Visual Studio 2022
+
+- Ejecutable:
+    Debe descargarse el archivo comprimido en el siguiente [enlace](https://drive.google.com/file/d/1mHEctW3jXBM_AP0XVVaUQrZVNqoH3fvQ/view?usp=sharing), descomprimirlo en una carpeta y ejecutar el .exe y la aplicación se ejecutará automaticamente, sin necesidad de instalar ningun programa o necesitar instalar .NET, ya que viene preparado dentro del propio ejecutable.
+  
+  ⚠️¡Aviso!
+    Al no ser una aplicación que esté publicada en la tienda de Windows, el antivirus te preguntará si deseas ejecutarla aunque no sea de una fuente fiable, al darle a Ejecutar de todos modos funcionará sin problemas
+  
+- Visual Studio 2022:
+    Simplemente debes copiar el enlace del repositorio para clonarlo en el propio Visual Studio 2022, una vez clonado solo hará falta darle a ejecutar
+  
