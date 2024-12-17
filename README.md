@@ -21,12 +21,31 @@ En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Goog
 - WPF
 - Paquetes NuGet
 
+## 📖 Modificación de las preguntas
+
+Si quieres modificar el juego para hacer diferentes preguntas o enfocarlo a otras tematicas solo debes entrar en el .json y modificarlo usando la siguiente plantilla:
+    {
+      "id": 1,
+      "nombre": "gandalf",
+      "tipo": "audio",
+      "url": "https://drive.google.com/file/d/1ICSqS6Vo1Lc4yve94zkv1OvXra1nGJSw/view?usp=drive_link",
+      "pregunta": "¿En qué saga de peliculas o serie sale este fragmento de audio?",
+      "respuesta": "El Señor de los Anillos"
+    }
+
+Lo más importante a la hora de modificar el JSON es
+- Que el nombre coincida con el que tiene el archivo subido en Google Drive
+- Que el archivo este accesible para todo el mundo que tenga el enlace
+- 
+
+
+
 ## 🛠️ Ejecución
 
 Hay dos opciones para ejecutar el proyecto, usar un ejecutable o ejecutarlo desde Visual Studio 2022
 
 - Ejecutable:
-    Debe descargarse el archivo comprimido en el siguiente [enlace](https://drive.google.com/file/d/1mHEctW3jXBM_AP0XVVaUQrZVNqoH3fvQ/view?usp=sharing), descomprimirlo en una carpeta y ejecutar el .exe y la aplicación se ejecutará automaticamente, sin necesidad de instalar ningun programa o necesitar instalar .NET, ya que viene preparado dentro del propio ejecutable.
+    Debe descargarse el archivo comprimido en el siguiente [enlace](https://drive.google.com/file/d/1mHEctW3jXBM_AP0XVVaUQrZVNqoH3fvQ/view?usp=sharing), descomprimirlo en una carpeta y ejecutar el .exe y la aplicación se empezará automaticamente, sin necesidad de instalar ningun programa o necesitar instalar .NET, ya que viene preparado dentro del propio ejecutable.
   
   ⚠️¡Aviso!
     Al no ser una aplicación que esté publicada en la tienda de Windows, el antivirus te preguntará si deseas ejecutarla aunque no sea de una fuente fiable, al darle a Ejecutar de todos modos funcionará sin problemas
