@@ -24,14 +24,14 @@ En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Goog
 
 Si quieres modificar el juego para hacer diferentes preguntas o enfocarlo a otras tematicas solo debes entrar en el .json y modificarlo usando la siguiente plantilla:
 
-    ```{
+    {
       "id": 1,
       "nombre": "gandalf",
       "tipo": "audio",
       "url": "https://drive.google.com/file/d/1ICSqS6Vo1Lc4yve94Zkv1OxXralnGJ5w/view?usp=drive_link",
       "pregunta": "¿En qué saga de películas o serie sale este fragmento de audio?",
       "respuesta": "El Señor de los Anillos"
-    }```
+    }
 
 Lo más importante a la hora de modificar el JSON es:
     - Que el nombre coincida con el que tiene el archivo subido en Google Drive.
@@ -39,11 +39,11 @@ Lo más importante a la hora de modificar el JSON es:
     - Cambiar la pregunta y la respuesta.
 
 ⚠️¡Aviso!
-   El apartado de preguntas también requiere un enlace, pero este no se usará por lo que podríamos usar un enlace por defecto.
+- El apartado de preguntas también requiere un enlace, pero este no se usará por lo que podríamos usar un enlace por defecto.
 
 ## 🛠️ Ejecución
 
-Hay dos opciones para ejecutar el proyecto, usar un ejecutable o ejecutarlo desde Visual Studio 2022
+Hay dos opciones para ejecutar el proyecto, usar un ejecutable o ejecutarlo desde Visual Studio 2022.
 
 - Ejecutable:
     Debe descargarse el archivo comprimido en el siguiente [enlace](https://drive.google.com/file/d/1mHEctW3jXBM_AP0XVVaUQrZVNqoH3fvQ/view?usp=sharing), descomprimirlo en una carpeta y ejecutar el .exe y la aplicación se empezará automaticamente, sin necesidad de      instalar ningun programa o necesitar instalar .NET, ya que viene preparado dentro del propio ejecutable.
