@@ -4,7 +4,6 @@ Proyecto realizado para la asignatura de Multimedia de la rama de Tecnologías d
 gamificada al estilo Kahoot, Trivial, etc. En este caso la temática estará centrada en libros y series varias, aunque es posible modificarlo añadiendo imágenes, audios o preguntas propias. 
 
 Hay trés modos de juego donde las preguntas se centrarán en un elemento multimedia diferente:
-
     - Preguntas: Apartedo centrado en el texto
     - Fotos: Apartado centrado en la relación de imágenes
     - Audios: Apartado centrado en la relación de audios.
@@ -17,15 +16,15 @@ En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Goog
 
 ## ⚙️ Tecnologías Usadas
 
-    - C#
-    - WPF
-    - Paquetes NuGet
+- C#
+- WPF
+- Paquetes NuGet
 
 ## 📖 Modificación de las preguntas
 
 Si quieres modificar el juego para hacer diferentes preguntas o enfocarlo a otras tematicas solo debes entrar en el .json y modificarlo usando la siguiente plantilla:
-        ```json
-    {
+
+    ```{
       "id": 1,
       "nombre": "gandalf",
       "tipo": "audio",
@@ -35,7 +34,6 @@ Si quieres modificar el juego para hacer diferentes preguntas o enfocarlo a otra
     }```
 
 Lo más importante a la hora de modificar el JSON es:
-
     - Que el nombre coincida con el que tiene el archivo subido en Google Drive.
     - Que el archivo este accesible para todo el mundo que tenga el enlace.
     - Cambiar la pregunta y la respuesta.
@@ -48,7 +46,7 @@ Lo más importante a la hora de modificar el JSON es:
 Hay dos opciones para ejecutar el proyecto, usar un ejecutable o ejecutarlo desde Visual Studio 2022
 
 - Ejecutable:
-    Debe descargarse el archivo comprimido en el siguiente [enlace](https://drive.google.com/file/d/1mHEctW3jXBM_AP0XVVaUQrZVNqoH3fvQ/view?usp=sharing), descomprimirlo en una carpeta y ejecutar el .exe y la aplicación se empezará automaticamente, sin necesidad de instalar ningun programa o necesitar instalar .NET, ya que viene preparado dentro del propio ejecutable.
+    Debe descargarse el archivo comprimido en el siguiente [enlace](https://drive.google.com/file/d/1mHEctW3jXBM_AP0XVVaUQrZVNqoH3fvQ/view?usp=sharing), descomprimirlo en una carpeta y ejecutar el .exe y la aplicación se empezará automaticamente, sin necesidad de      instalar ningun programa o necesitar instalar .NET, ya que viene preparado dentro del propio ejecutable.
   
   ⚠️¡Aviso!
     Al no ser una aplicación que esté publicada en la tienda de Windows, el antivirus te preguntará si deseas ejecutarla aunque no sea de una fuente fiable, al darle a Ejecutar de todos modos funcionará sin problemas
