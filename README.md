@@ -4,9 +4,9 @@ Proyecto realizado para la asignatura de Multimedia de la rama de Tecnologías d
 gamificada al estilo Kahoot, Trivial, etc. En este caso la temática estará centrada en libros y series varias, aunque es posible modificarlo añadiendo imágenes, audios o preguntas propias. 
 
 Hay trés modos de juego donde las preguntas se centrarán en un elemento multimedia diferente:
-    - Preguntas: Apartedo centrado en el texto.
-    - Fotos: Apartado centrado en la relación de imágenes
-    - Audios: Apartado centrado en la relación de audios.
+- Preguntas: Apartedo centrado en el texto.
+- Fotos: Apartado centrado en la relación de imágenes.
+- Audios: Apartado centrado en la relación de audios.
 
 En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Google Drive, para que sea lo más ligera posible.
 
@@ -34,10 +34,10 @@ Si quieres modificar el juego para hacer diferentes preguntas o enfocarlo a otra
     }
 
 Lo más importante a la hora de modificar el JSON es:
-    - Que el nombre coincida con el que tiene el archivo subido en Google Drive.
-    - Que el archivo este accesible para todo el mundo que tenga el enlace.
-    - Cambiar la pregunta y la respuesta.
-
+- Que el nombre coincida con el que tiene el archivo subido en Google Drive.
+- Que el archivo este accesible para todo el mundo que tenga el enlace.
+- Cambiar la pregunta y la respuesta.
+    
 ⚠️¡Aviso!
 - El apartado de preguntas también requiere un enlace, pero este no se usará por lo que podríamos usar un enlace por defecto.
 
