@@ -10,7 +10,7 @@ Hay trés modos de juego donde las preguntas se centrarán en un elemento multim
 
 En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Google Drive, para que sea lo más ligera posible.
 
-## 🧍: Creador
+## 🧍 Creador
 
 - Andrés González Varela
 
