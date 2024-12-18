@@ -22,7 +22,7 @@ En dicha aplicación se aprovecha la posibilidad de descarga de archivos de Goog
 
 ## 📖 Modificación de las preguntas
 
-Si quieres modificar el juego para hacer diferentes preguntas o enfocarlo a otras tematicas solo debes entrar en el .json y modificarlo usando la siguiente plantilla:
+Si quieres modificar el juego para hacer diferentes preguntas o enfocarlo a otras temáticas solo debes entrar en el .json y modificarlo usando la siguiente plantilla:
 
     {
       "id": 1,
@@ -46,7 +46,7 @@ Lo más importante a la hora de modificar el JSON es:
 Hay dos opciones para ejecutar el proyecto, usar un ejecutable o ejecutarlo desde Visual Studio 2022.
 
 - Ejecutable:
-    Debe descargarse el archivo comprimido en el siguiente [enlace](https://drive.google.com/file/d/1mHEctW3jXBM_AP0XVVaUQrZVNqoH3fvQ/view?usp=sharing), descomprimirlo en una carpeta y ejecutar el .exe y la aplicación se empezará automaticamente, sin necesidad de      instalar ningun programa o necesitar instalar .NET, ya que viene preparado dentro del propio ejecutable.
+    Debe descargarse el archivo comprimido en el siguiente [enlace](https://drive.google.com/file/d/1mHEctW3jXBM_AP0XVVaUQrZVNqoH3fvQ/view?usp=sharing), descomprimirlo en una carpeta y ejecutar el .exe y la aplicación se empezará automaticamente, sin necesidad de instalar ningun programa o necesitar instalar .NET, ya que viene preparado dentro del propio ejecutable.
   
   ⚠️¡Aviso!
     Al no ser una aplicación que esté publicada en la tienda de Windows, el antivirus te preguntará si deseas ejecutarla aunque no sea de una fuente fiable, al darle a Ejecutar de todos modos funcionará sin problemas.
